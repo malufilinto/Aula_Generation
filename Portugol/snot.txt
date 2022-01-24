@@ -1,0 +1,5 @@
+usar o laço para - quando vc sabe quantas vezes você quer repitir alguma coisa
+
+laço enquanto - quando não tiver onumero exato de repetições
+
+faça - vc necessáriamente vai executar pelo menos uma vez (sempre acompanhada do enquanto)
