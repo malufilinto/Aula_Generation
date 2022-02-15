@@ -1,0 +1,38 @@
+create database db_rh
+
+use db_rh;
+
+Create table funcionario(
+id int auto_increment,
+nome varchar (12) not null,
+telefone bigint (11) not null,
+email varchar (32) not null,
+salario double  not null,
+Primary key (id)
+
+)
+
+
+insert into tb_funcionario(nome, telefone, email, salario) 
+Values("Helvetica", 0987654321, "vetica@email.com", 3500)
+
+insert into tb_funcionario(nome, telefone, email, salario) 
+Values("Arial", 1819202122, "aral@email.com", 1300)
+
+insert into tb_funcionario(nome, telefone, email, salario) 
+Values("Euclides", 14151617, "euclides@email.com", 2500)
+
+insert into tb_funcionario(nome, telefone, email, salario) 
+Values("Diana", 910111213, "diana@email.com", 3000)
+
+insert into tb_funcionario(nome, telefone, email, salario) 
+Values("Roberto", 12345678, "roberto@email.com", 1800)
+
+
+select nome, telefone, email, salario
+From tb_funcionario
+Where salario between 2000 and 8000;
+
+select nome, telefone, email, salario
+From tb_funcionario
+Where salario between 0 and  2000;
