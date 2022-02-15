@@ -1,0 +1,35 @@
+create database db_escola
+
+use db_escola;
+Create table tb_aluno(
+id int auto_increment,
+nome varchar (15) not null,
+serie int (1) not null,
+nota int (1) not null,
+semestre char (1) not null,
+turno varchar (8) not null,
+primary key (id)
+)
+
+insert into tb_aluno(nome, serie, nota_1, nota_2, nota_3)
+Values("Alice", 7, 6, 1, "manhã")
+
+insert into tb_aluno(nome, serie, nota_1, nota_2, nota_3)
+Values("Matheus", 3, 4, 2, "tarde")
+
+insert into tb_aluno(nome, serie, nota_1, nota_2, nota_3)
+Values("Livia", 8, 5, 3, "tarde")
+
+insert into tb_aluno(nome, serie, nota_1, nota_2, nota_3)
+Values("João", 5, 9, 4, "manhã")
+
+insert into tb_aluno(nome, serie, nota_1, nota_2, nota_3)
+Values("Tess", 3, 6, 2, "tarde")
+
+select nome, serie, nota
+From tb_aluno
+Where nota_1 between 1 and  7;
+
+select nome, serie, nota
+From tb_aluno
+Where nota_1 between 7 and  10;
