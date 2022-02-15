@@ -1,0 +1,79 @@
+create database db_generation_game_online;
+use db_generation_game_online;
+
+Create table tb_personagem(
+id int auto_increment,
+nome varchar (12) not null,
+poder_ataque int (3) not null,
+poder_defesa int (3) not null,
+
+primary key (id)
+);
+
+select * from tb_classe
+
+insert into tb_classe(nome, poder_ataque, poder_defesa)
+Values("Jogadoh", 1200, 1000);
+
+insert into tb_classe(nome, poder_ataque, poder_defesa)
+Values("Helvetica", 2500, 3000);
+
+insert into tb_classe(nome, poder_ataque, poder_defesa)
+Values("JoganDinho", 1200, 1000);
+
+insert into tb_classe(nome, poder_ataque, poder_defesa)
+Values("MeryPlay", 1700, 1500);
+
+insert into tb_classe(nome, poder_ataque, poder_defesa)
+Values("Carry", 2400, 2800);
+
+insert into tb_classe(nome, poder_ataque, poder_defesa)
+Values("Luke", 2100, 1800);
+
+use db_generation_game_online;
+Create table tb_personagem(
+id_classe bigint auto_increment,
+classe varchar (10) not null,
+ranking int (4),
+arma varchar (10) not null,
+clã varchar (10),
+ativo boolean,
+fk_classe int not null,
+primary key (id_classe),
+foreign key  (fk_classe) references tb_classe(id)
+);
+
+insert into tb_personagem(classe, ranking, arma, clã, ativo, fk_classe)
+Values("Soldado", 330, "espada", "Verde", false, 1)
+
+insert into tb_personagem(classe, ranking, arma, clã, ativo, fk_classe)
+Values("Arqueiro", 57, "arco", "Roxo", true, 2)
+
+insert into tb_personagem(classe, ranking, arma, clã, ativo, fk_classe)
+Values("Mago", 169, "varinha", "Rosa", true, 3)
+
+insert into tb_personagem(classe, ranking, arma, clã, ativo, fk_classe)
+Values("Guerreiro", 12, "lança", "Prata", false, 4)
+
+insert into tb_personagem(classe, ranking, arma, clã, ativo, fk_classe)
+Values("Dragão", 327, "fogo", "Cinza", false, 5)
+
+insert into tb_personagem(classe, ranking, arma, clã, ativo, fk_classe)
+Values("Lobo", 215, "velocidade", "Vermelho", true, 6)
+
+select * from tb_personagem
+
+Select nome, poder_ataque
+From tb_classe
+Where poder_ataque between 2000 and  10000;
+
+Select nome, poder_defesa
+From tb_classe
+Where poder_defesa between 100 and  2000;
+
+From tb_classe
+Where nome like "%c%";
+
+select "Mago" From tb_personagem 
+
+select * From tb_classe Inner Join tb_personagem 
