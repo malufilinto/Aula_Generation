@@ -1,0 +1,73 @@
+Create database db_pizzaria_legal
+Use db_pizzaria_legal;
+
+Create table tb_categoria(
+id bigint auto_increment,
+nome_cliente varchar (15) not null,
+endereco varchar (15) not null,
+telefone bigint (12) not null,
+valor double not null,
+primary key (id)
+);
+
+Use db_pizzaria_legal;
+Create table tb_pizza(
+id bigint auto_increment,
+sabor varchar (15) not null,
+massa varchar (15) not null,
+borda varchar (12) not null,
+tamanho varchar (8) not null,
+primary key(id),
+foreign key (id) references tb_categoria(id)
+);
+
+insert into tb_categoria(nome_cliente, endereco, telefone, valor)
+Values("Ana", "Rua A, n 1", 123456789, 60)
+
+insert into tb_categoria(nome_cliente, endereco, telefone, valor)
+Values("Bia", "Rua B, n 2", 234567890, 30)
+
+insert into tb_categoria(nome_cliente, endereco, telefone, valor)
+Values("Caio", "Rua C, n 3", 345678901, 110)
+
+insert into tb_categoria(nome_cliente, endereco, telefone, valor)
+Values("Diana", "Rua D, n 4", 456789012, 53)
+
+insert into tb_categoria(nome_cliente, endereco, telefone, valor)
+Values("Elias", "Rua E, n 5", 567890123, 83)
+
+insert into tb_categoria(nome_cliente, endereco, telefone, valor)
+Values("Flamingo", "Rua F, n 6", 678901234, 218)
+
+insert into tb_pizza(sabor, massa, borda, tamanho, id_pizza)
+Values("Atum", "Fina", "Recheada", "média", 1)
+
+insert into tb_pizza(sabor, massa, borda, tamanho, id_pizza)
+Values("Banana", "Fina", "Normal", "pequena", 2)
+
+insert into tb_pizza(sabor, massa, borda, tamanho, id_pizza)
+Values("Calabresa", "Grossa", "Rechada", "grande", 3)
+
+insert into tb_pizza(sabor, massa, borda, tamanho, id_pizza)
+Values("Doce de Leite", "Fina", "Normal", "média", 4)
+
+insert into tb_pizza(sabor, massa, borda, tamanho, id_pizza)
+Values("Espinafre", "Fina", "Recheada", "pequena", 5)
+
+insert into tb_pizza(sabor, massa, borda, tamanho, id_pizza)
+Values("Frango", "Grossa", "Recheada", "grande", 6)
+
+Select nome_cliente, valor
+From tb_categoria
+Where valor between 45 and  1000;
+
+Select nome_cliente, valor
+From tb_categoria
+Where valor between 29 and 60;
+
+select * from tb_categoria Where nome_cliente like "%c%";
+
+select nome_cliente , tamanho
+From tb_categoria as a
+Inner Join tb_pizza as b
+                on a.id = b.id_pizza;
