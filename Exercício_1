@@ -34,8 +34,6 @@ From tb_funcionario
 Where salario between 2000 and 8000;
 
 select nome, telefone, email, salario
-
 From tb_funcionario
-
 Where salario between 0 and  2000;
 
