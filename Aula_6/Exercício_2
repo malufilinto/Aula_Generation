@@ -1,0 +1,41 @@
+create database db_ecommerce
+use db_ecommerce;
+
+Create table tb_produto(
+id int auto_increment,
+produto varchar (10) not null,
+cor varchar (10) not null,
+marca varchar (10) not null,
+tamanho char (2) not null,
+valor double,
+primary key (id)
+)
+insert into tb_produto(produto, cor, marca, tamanho, valor)
+Values("body","azul","Zara", "G", 250)
+
+insert into tb_produto(produto, cor, marca, tamanho, valor)
+Values("vestido","vermelho","Gucci", "M", 979)
+
+insert into tb_produto(produto, cor, marca, tamanho, valor)
+Values("camisa","branca","Prada", "XG", 799)
+
+insert into tb_produto(produto, cor, marca, tamanho, valor)
+Values("Jaqueta","preta","Prada", "G", 989)
+
+insert into tb_produto(produto, cor, marca, tamanho, valor)
+Values("shorts","vermehlo","Zara", "P", 139)
+
+insert into tb_produto(produto, cor, marca, tamanho, valor)
+Values("camiseta","verde","Youcom", "XP", 150)
+
+select produto, tamanho, cor, valor
+
+From tb_produto
+
+Where valor between 500 and  2500;
+
+select produto, tamanho, cor, valor
+
+From tb_produto
+
+Where valor between 10 and 500;
